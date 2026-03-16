@@ -1,0 +1,186 @@
+site_name: "vLLM & SGLang Expert Tutorials"
+site_description: "A comprehensive learning resource for mastering vLLM and SGLang — from fundamentals to contributor-level expertise"
+site_author: "vLLM Study Project"
+
+theme:
+  name: material
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - toc.integrate
+    - search.suggest
+    - content.code.copy
+    - content.code.annotate
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: teal
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: indigo
+      accent: teal
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  icon:
+    repo: fontawesome/brands/github
+
+plugins:
+  - search
+  - mkdocs-jupyter:
+      include_source: true
+      execute: false
+      allow_errors: true
+      include: ["*.ipynb"]
+      ignore: [".*"]
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.details
+  - pymdownx.emoji
+  - admonition
+  - attr_list
+  - md_in_html
+  - toc:
+      permalink: true
+
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js
+
+nav:
+  - Home: index.md
+  - "Part 1: Foundations":
+    - Overview: part1_foundations/index.md
+    - "1.1 Transformer & KV-Cache Recap": notebooks/part1/chapter_1.1_transformer_kvcache.ipynb
+    - "1.2 GPU Memory Hierarchy": notebooks/part1/chapter_1.2_gpu_memory.ipynb
+    - "1.3 Arithmetic Intensity & Roofline": notebooks/part1/chapter_1.3_roofline_model.ipynb
+    - "1.4 Tokenization & Streaming": notebooks/part1/chapter_1.4_tokenization.ipynb
+    - "1.5 Latency vs Throughput Metrics": notebooks/part1/chapter_1.5_metrics.ipynb
+    - "1.6 Batching Strategies": notebooks/part1/chapter_1.6_batching.ipynb
+    - "1.7 Quantization Primer": notebooks/part1/chapter_1.7_quantization.ipynb
+    - "1.8 Sampling Strategies": notebooks/part1/chapter_1.8_sampling.ipynb
+  - "Part 2: System Design":
+    - Overview: part2_system_design/index.md
+    - "2.1 Request Lifecycle": notebooks/part2/chapter_2.1_request_lifecycle.ipynb
+    - "2.2 Scheduler Design": notebooks/part2/chapter_2.2_scheduler_design.ipynb
+    - "2.3 KV-Cache Memory Management": notebooks/part2/chapter_2.3_kvcache_memory.ipynb
+    - "2.4 Model Parallelism for Serving": notebooks/part2/chapter_2.4_model_parallelism.ipynb
+    - "2.5 API Layer Design": notebooks/part2/chapter_2.5_api_layer.ipynb
+    - "2.6 Multi-Model Serving": notebooks/part2/chapter_2.6_multi_model.ipynb
+    - "2.7 Disaggregated Serving": notebooks/part2/chapter_2.7_disaggregated.ipynb
+  - "Part 3: vLLM Architecture":
+    - Overview: part3_vllm_architecture/index.md
+    - "3.1 Codebase Tour": notebooks/part3/chapter_3.1_codebase_tour.ipynb
+    - "3.2 LLMEngine & AsyncLLMEngine": notebooks/part3/chapter_3.2_llm_engine.ipynb
+    - "3.3 Scheduler Deep Dive": notebooks/part3/chapter_3.3_scheduler.ipynb
+    - "3.4 PagedAttention": notebooks/part3/chapter_3.4_paged_attention.ipynb
+    - "3.5 Block Manager": notebooks/part3/chapter_3.5_block_manager.ipynb
+    - "3.6 Worker & ModelRunner": notebooks/part3/chapter_3.6_worker_model_runner.ipynb
+    - "3.7 Model Loader": notebooks/part3/chapter_3.7_model_loader.ipynb
+    - "3.8 Attention Backends": notebooks/part3/chapter_3.8_attention_backends.ipynb
+    - "3.9 Sampling Pipeline": notebooks/part3/chapter_3.9_sampling_pipeline.ipynb
+    - "3.10 API Server": notebooks/part3/chapter_3.10_api_server.ipynb
+  - "Part 4: vLLM Internals":
+    - Overview: part4_vllm_internals/index.md
+    - "4.1 KV-Cache Memory Layout": notebooks/part4/chapter_4.1_kvcache_layout.ipynb
+    - "4.2 Prefix Caching (APC)": notebooks/part4/chapter_4.2_prefix_caching.ipynb
+    - "4.3 CUDA Graph Capture": notebooks/part4/chapter_4.3_cuda_graphs.ipynb
+    - "4.4 Custom CUDA Kernels": notebooks/part4/chapter_4.4_cuda_kernels.ipynb
+    - "4.5 Distributed Execution": notebooks/part4/chapter_4.5_distributed.ipynb
+    - "4.6 Speculative Decoding": notebooks/part4/chapter_4.6_speculative_decoding.ipynb
+    - "4.7 Chunked Prefill": notebooks/part4/chapter_4.7_chunked_prefill.ipynb
+    - "4.8 LoRA Serving": notebooks/part4/chapter_4.8_lora.ipynb
+  - "Part 5: SGLang Architecture":
+    - Overview: part5_sglang_architecture/index.md
+    - "5.1 Codebase Tour": notebooks/part5/chapter_5.1_codebase_tour.ipynb
+    - "5.2 Runtime & Router": notebooks/part5/chapter_5.2_runtime.ipynb
+    - "5.3 RadixAttention": notebooks/part5/chapter_5.3_radix_attention.ipynb
+    - "5.4 Scheduler": notebooks/part5/chapter_5.4_scheduler.ipynb
+    - "5.5 Tokenizer & Detokenizer": notebooks/part5/chapter_5.5_tokenizer.ipynb
+    - "5.6 ModelRunner & TpWorker": notebooks/part5/chapter_5.6_model_runner.ipynb
+    - "5.7 FlashInfer Integration": notebooks/part5/chapter_5.7_flashinfer.ipynb
+    - "5.8 Constrained Decoding": notebooks/part5/chapter_5.8_constrained_decoding.ipynb
+    - "5.9 Frontend DSL": notebooks/part5/chapter_5.9_frontend_dsl.ipynb
+    - "5.10 Multi-Modal Support": notebooks/part5/chapter_5.10_multimodal.ipynb
+  - "Part 6: SGLang Internals":
+    - Overview: part6_sglang_internals/index.md
+    - "6.1 RadixAttention Advanced": notebooks/part6/chapter_6.1_radix_advanced.ipynb
+    - "6.2 Data & Expert Parallelism": notebooks/part6/chapter_6.2_parallelism.ipynb
+    - "6.3 Torch.compile Integration": notebooks/part6/chapter_6.3_torch_compile.ipynb
+    - "6.4 Overlap Scheduling": notebooks/part6/chapter_6.4_overlap_scheduling.ipynb
+    - "6.5 FP8 & Quantization": notebooks/part6/chapter_6.5_fp8_quantization.ipynb
+    - "6.6 Speculative Decoding": notebooks/part6/chapter_6.6_speculative_decoding.ipynb
+    - "6.7 Embedding & Reward Models": notebooks/part6/chapter_6.7_embedding_reward.ipynb
+    - "6.8 Custom CUDA Kernels": notebooks/part6/chapter_6.8_cuda_kernels.ipynb
+  - "Part 7: CUDA & Triton":
+    - Overview: part7_cuda_kernels/index.md
+    - "7.1 CUDA Programming Primer": notebooks/part7/chapter_7.1_cuda_primer.ipynb
+    - "7.2 Triton Programming": notebooks/part7/chapter_7.2_triton.ipynb
+    - "7.3 PagedAttention Kernel": notebooks/part7/chapter_7.3_paged_attention_kernel.ipynb
+    - "7.4 FlashAttention Algorithm": notebooks/part7/chapter_7.4_flash_attention.ipynb
+    - "7.5 Fused Kernels": notebooks/part7/chapter_7.5_fused_kernels.ipynb
+    - "7.6 Quantized Matmul": notebooks/part7/chapter_7.6_quantized_matmul.ipynb
+    - "7.7 CUTLASS & CuTe": notebooks/part7/chapter_7.7_cutlass.ipynb
+    - "7.8 Kernel Profiling": notebooks/part7/chapter_7.8_profiling.ipynb
+  - "Part 8: New Models":
+    - Overview: part8_new_models/index.md
+    - "8.1 vLLM Model Registration": notebooks/part8/chapter_8.1_vllm_registration.ipynb
+    - "8.2 Implementing a Model in vLLM": notebooks/part8/chapter_8.2_vllm_new_model.ipynb
+    - "8.3 Adding Quantization": notebooks/part8/chapter_8.3_quantization_support.ipynb
+    - "8.4 Multi-Modal Integration": notebooks/part8/chapter_8.4_multimodal.ipynb
+    - "8.5 SGLang Model Registration": notebooks/part8/chapter_8.5_sglang_registration.ipynb
+    - "8.6 Implementing a Model in SGLang": notebooks/part8/chapter_8.6_sglang_new_model.ipynb
+    - "8.7 Testing & Validation": notebooks/part8/chapter_8.7_testing.ipynb
+    - "8.8 Performance Tuning": notebooks/part8/chapter_8.8_performance.ipynb
+  - "Part 9: Production":
+    - Overview: part9_production/index.md
+    - "9.1 Deployment Options": notebooks/part9/chapter_9.1_deployment.ipynb
+    - "9.2 Load Balancing": notebooks/part9/chapter_9.2_load_balancing.ipynb
+    - "9.3 Monitoring & Observability": notebooks/part9/chapter_9.3_monitoring.ipynb
+    - "9.4 Benchmarking Methodology": notebooks/part9/chapter_9.4_benchmarking.ipynb
+    - "9.5 Cost Optimization": notebooks/part9/chapter_9.5_cost_optimization.ipynb
+    - "9.6 Multi-Node Serving": notebooks/part9/chapter_9.6_multi_node.ipynb
+    - "9.7 MoE Model Serving": notebooks/part9/chapter_9.7_moe_serving.ipynb
+    - "9.8 Online vs Offline Inference": notebooks/part9/chapter_9.8_online_vs_offline.ipynb
+  - "Part 10: Comparison":
+    - Overview: part10_comparison/index.md
+    - "10.1 Architecture Comparison": notebooks/part10/chapter_10.1_architecture.ipynb
+    - "10.2 Scheduling Comparison": notebooks/part10/chapter_10.2_scheduling.ipynb
+    - "10.3 Memory Management Comparison": notebooks/part10/chapter_10.3_memory.ipynb
+    - "10.4 Performance Benchmarks": notebooks/part10/chapter_10.4_benchmarks.ipynb
+    - "10.5 Feature Matrix": notebooks/part10/chapter_10.5_features.ipynb
+    - "10.6 Decision Framework": notebooks/part10/chapter_10.6_decision.ipynb
+  - "Part 11: Contributing":
+    - Overview: part11_contributing/index.md
+    - "11.1 Dev Environment Setup": notebooks/part11/chapter_11.1_dev_setup.ipynb
+    - "11.2 Testing Framework": notebooks/part11/chapter_11.2_testing.ipynb
+    - "11.3 Debugging Techniques": notebooks/part11/chapter_11.3_debugging.ipynb
+    - "11.4 Performance Profiling": notebooks/part11/chapter_11.4_profiling.ipynb
+    - "11.5 Code Review & PR Process": notebooks/part11/chapter_11.5_code_review.ipynb
+    - "11.6 CI/CD Pipeline": notebooks/part11/chapter_11.6_cicd.ipynb
+    - "11.7 Writing Documentation": notebooks/part11/chapter_11.7_documentation.ipynb
+  - "Part 12: Research":
+    - Overview: part12_research/index.md
+    - "12.1 Disaggregated Serving": notebooks/part12/chapter_12.1_disaggregated.ipynb
+    - "12.2 KV-Cache Compression": notebooks/part12/chapter_12.2_kvcache_compression.ipynb
+    - "12.3 Long-Context Serving": notebooks/part12/chapter_12.3_long_context.ipynb
+    - "12.4 Reasoning Model Serving": notebooks/part12/chapter_12.4_reasoning_models.ipynb
+    - "12.5 Hardware-Aware Optimization": notebooks/part12/chapter_12.5_hardware.ipynb
+    - "12.6 Agent Serving": notebooks/part12/chapter_12.6_agent_serving.ipynb
+    - "12.7 MoE Optimization": notebooks/part12/chapter_12.7_moe_optimization.ipynb
+    - "12.8 Continuous Learning": notebooks/part12/chapter_12.8_continuous_learning.ipynb

@@ -1,0 +1,42 @@
+[project]
+name = "vllm-study"
+version = "0.1.0"
+description = "vLLM & SGLang Expert Tutorials — from fundamentals to contributor-level expertise"
+readme = "docs/index.md"
+requires-python = ">=3.10,<3.13"
+license = { text = "MIT" }
+
+dependencies = [
+    # Documentation site
+    "mkdocs>=1.6.0",
+    "mkdocs-material>=9.5.0",
+    "mkdocs-jupyter>=0.25.0",
+
+    # Jupyter
+    "jupyter>=1.1.0",
+    "notebook>=7.2.0",
+    "ipykernel>=6.29.0",
+    "nbformat>=5.10.0",
+    "nbconvert>=7.16.0",
+
+    # Core ML (used in tutorial code)
+    "numpy>=1.26.0,<2",
+    "matplotlib>=3.8.0",
+    "torch>=2.1.0,<2.3",
+    "transformers>=4.36.0,<4.41",
+
+    # Utils used in demos
+    "prometheus-client>=0.20.0",
+    "tqdm>=4.66.0",
+    "requests>=2.31.0",
+    "aiohttp>=3.9.0",
+    "fastapi>=0.110.0",
+    "uvicorn>=0.29.0",
+    "pydantic>=2.6.0",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=8.0.0",
+    "ruff>=0.4.0",
+]
