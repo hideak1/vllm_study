@@ -2,6 +2,8 @@
 
 **A learning project for understanding LLM serving systems — from fundamentals to internals.**
 
+**[Read Online](https://hideak1.github.io/vllm_study/)** | **[Open in Colab](https://colab.research.google.com/github/hideak1/vllm_study/blob/main/notebooks/part1/chapter_1.1_transformer_kvcache.ipynb)** | **[vLLM](https://github.com/vllm-project/vllm)** | **[SGLang](https://github.com/sgl-project/sglang)**
+
 > **Disclaimer**: This is a personal study project, not official documentation. The notebook content is **AI-generated** (by Claude) and organized into a structured curriculum for learning purposes. Content may contain inaccuracies or become outdated as these frameworks evolve rapidly. If you spot errors, PRs and issues are very welcome!
 
 Inspired by [UvA Deep Learning Tutorials](https://uvadlc-notebooks.readthedocs.io/en/latest/), this project organizes 96 Jupyter notebooks with explanations, runnable demos, and hands-on exercises for studying vLLM and SGLang internals.
