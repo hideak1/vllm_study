@@ -1,6 +1,9 @@
 site_name: "vLLM & SGLang Expert Tutorials"
+site_url: https://hideak1.github.io/vllm_study/
 site_description: "A comprehensive learning resource for mastering vLLM and SGLang — from fundamentals to contributor-level expertise"
 site_author: "vLLM Study Project"
+repo_url: https://github.com/hideak1/vllm_study
+repo_name: hideak1/vllm_study
 
 theme:
   name: material
@@ -39,6 +42,49 @@ theme:
 
 plugins:
   - search
+  - i18n:
+      docs_structure: suffix
+      fallback_to_default: true
+      reconfigure_material: true
+      languages:
+        - locale: en
+          default: true
+          name: English
+          build: true
+        - locale: zh
+          name: 中文
+          build: true
+          nav_translations:
+            Home: 首页
+            "Part 1: Foundations": "第1部分：基础知识"
+            "Part 2: System Design": "第2部分：系统设计"
+            "Part 3: vLLM Architecture": "第3部分：vLLM 架构"
+            "Part 4: vLLM Internals": "第4部分：vLLM 内部机制"
+            "Part 5: SGLang Architecture": "第5部分：SGLang 架构"
+            "Part 6: SGLang Internals": "第6部分：SGLang 内部机制"
+            "Part 7: CUDA & Triton": "第7部分：CUDA 与 Triton"
+            "Part 8: New Models": "第8部分：新增模型"
+            "Part 9: Production": "第9部分：生产部署"
+            "Part 10: Comparison": "第10部分：对比分析"
+            "Part 11: Contributing": "第11部分：参与贡献"
+            "Part 12: Research": "第12部分：前沿研究"
+        - locale: ja
+          name: 日本語
+          build: true
+          nav_translations:
+            Home: ホーム
+            "Part 1: Foundations": "第1部：基礎知識"
+            "Part 2: System Design": "第2部：システム設計"
+            "Part 3: vLLM Architecture": "第3部：vLLM アーキテクチャ"
+            "Part 4: vLLM Internals": "第4部：vLLM 内部構造"
+            "Part 5: SGLang Architecture": "第5部：SGLang アーキテクチャ"
+            "Part 6: SGLang Internals": "第6部：SGLang 内部構造"
+            "Part 7: CUDA & Triton": "第7部：CUDA & Triton"
+            "Part 8: New Models": "第8部：新規モデル追加"
+            "Part 9: Production": "第9部：本番デプロイ"
+            "Part 10: Comparison": "第10部：比較分析"
+            "Part 11: Contributing": "第11部：コントリビュート"
+            "Part 12: Research": "第12部：最先端研究"
   - mkdocs-jupyter:
       include_source: true
       execute: false

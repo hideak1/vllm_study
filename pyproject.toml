@@ -11,6 +11,7 @@ dependencies = [
     "mkdocs>=1.6.0",
     "mkdocs-material>=9.5.0",
     "mkdocs-jupyter>=0.25.0",
+    "mkdocs-static-i18n>=1.2.0",
 
     # Jupyter
     "jupyter>=1.1.0",
