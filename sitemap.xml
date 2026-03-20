@@ -1,3 +1,315 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+    <url>
+        <loc>https://hideak1.github.io/vllm_study/</loc>
+        <lastmod>2026-03-20</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://hideak1.github.io/vllm_study/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://hideak1.github.io/vllm_study/ja/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://hideak1.github.io/vllm_study/zh/"/>
+    </url>
+    <url>
+        <loc>https://hideak1.github.io/vllm_study/part10_comparison/</loc>
+        <lastmod>2026-03-20</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://hideak1.github.io/vllm_study/part10_comparison/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://hideak1.github.io/vllm_study/ja/part10_comparison/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://hideak1.github.io/vllm_study/zh/part10_comparison/"/>
+    </url>
+    <url>
+        <loc>https://hideak1.github.io/vllm_study/part11_contributing/</loc>
+        <lastmod>2026-03-20</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://hideak1.github.io/vllm_study/part11_contributing/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://hideak1.github.io/vllm_study/ja/part11_contributing/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://hideak1.github.io/vllm_study/zh/part11_contributing/"/>
+    </url>
+    <url>
+        <loc>https://hideak1.github.io/vllm_study/part12_research/</loc>
+        <lastmod>2026-03-20</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://hideak1.github.io/vllm_study/part12_research/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://hideak1.github.io/vllm_study/ja/part12_research/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://hideak1.github.io/vllm_study/zh/part12_research/"/>
+    </url>
+    <url>
+        <loc>https://hideak1.github.io/vllm_study/part1_foundations/</loc>
+        <lastmod>2026-03-20</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://hideak1.github.io/vllm_study/part1_foundations/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://hideak1.github.io/vllm_study/ja/part1_foundations/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://hideak1.github.io/vllm_study/zh/part1_foundations/"/>
+    </url>
+    <url>
+        <loc>https://hideak1.github.io/vllm_study/part2_system_design/</loc>
+        <lastmod>2026-03-20</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://hideak1.github.io/vllm_study/part2_system_design/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://hideak1.github.io/vllm_study/ja/part2_system_design/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://hideak1.github.io/vllm_study/zh/part2_system_design/"/>
+    </url>
+    <url>
+        <loc>https://hideak1.github.io/vllm_study/part3_vllm_architecture/</loc>
+        <lastmod>2026-03-20</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://hideak1.github.io/vllm_study/part3_vllm_architecture/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://hideak1.github.io/vllm_study/ja/part3_vllm_architecture/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://hideak1.github.io/vllm_study/zh/part3_vllm_architecture/"/>
+    </url>
+    <url>
+        <loc>https://hideak1.github.io/vllm_study/part4_vllm_internals/</loc>
+        <lastmod>2026-03-20</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://hideak1.github.io/vllm_study/part4_vllm_internals/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://hideak1.github.io/vllm_study/ja/part4_vllm_internals/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://hideak1.github.io/vllm_study/zh/part4_vllm_internals/"/>
+    </url>
+    <url>
+        <loc>https://hideak1.github.io/vllm_study/part5_sglang_architecture/</loc>
+        <lastmod>2026-03-20</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://hideak1.github.io/vllm_study/part5_sglang_architecture/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://hideak1.github.io/vllm_study/ja/part5_sglang_architecture/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://hideak1.github.io/vllm_study/zh/part5_sglang_architecture/"/>
+    </url>
+    <url>
+        <loc>https://hideak1.github.io/vllm_study/part6_sglang_internals/</loc>
+        <lastmod>2026-03-20</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://hideak1.github.io/vllm_study/part6_sglang_internals/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://hideak1.github.io/vllm_study/ja/part6_sglang_internals/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://hideak1.github.io/vllm_study/zh/part6_sglang_internals/"/>
+    </url>
+    <url>
+        <loc>https://hideak1.github.io/vllm_study/part7_cuda_kernels/</loc>
+        <lastmod>2026-03-20</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://hideak1.github.io/vllm_study/part7_cuda_kernels/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://hideak1.github.io/vllm_study/ja/part7_cuda_kernels/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://hideak1.github.io/vllm_study/zh/part7_cuda_kernels/"/>
+    </url>
+    <url>
+        <loc>https://hideak1.github.io/vllm_study/part8_new_models/</loc>
+        <lastmod>2026-03-20</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://hideak1.github.io/vllm_study/part8_new_models/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://hideak1.github.io/vllm_study/ja/part8_new_models/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://hideak1.github.io/vllm_study/zh/part8_new_models/"/>
+    </url>
+    <url>
+        <loc>https://hideak1.github.io/vllm_study/part9_production/</loc>
+        <lastmod>2026-03-20</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://hideak1.github.io/vllm_study/part9_production/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://hideak1.github.io/vllm_study/ja/part9_production/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://hideak1.github.io/vllm_study/zh/part9_production/"/>
+    </url>
+    <url>
+        <loc>https://hideak1.github.io/vllm_study/zh/</loc>
+        <lastmod>2026-03-20</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://hideak1.github.io/vllm_study/zh/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://hideak1.github.io/vllm_study/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://hideak1.github.io/vllm_study/ja/"/>
+    </url>
+    <url>
+        <loc>https://hideak1.github.io/vllm_study/zh/part10_comparison/</loc>
+        <lastmod>2026-03-20</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://hideak1.github.io/vllm_study/zh/part10_comparison/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://hideak1.github.io/vllm_study/part10_comparison/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://hideak1.github.io/vllm_study/ja/part10_comparison/"/>
+    </url>
+    <url>
+        <loc>https://hideak1.github.io/vllm_study/zh/part11_contributing/</loc>
+        <lastmod>2026-03-20</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://hideak1.github.io/vllm_study/zh/part11_contributing/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://hideak1.github.io/vllm_study/part11_contributing/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://hideak1.github.io/vllm_study/ja/part11_contributing/"/>
+    </url>
+    <url>
+        <loc>https://hideak1.github.io/vllm_study/zh/part12_research/</loc>
+        <lastmod>2026-03-20</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://hideak1.github.io/vllm_study/zh/part12_research/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://hideak1.github.io/vllm_study/part12_research/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://hideak1.github.io/vllm_study/ja/part12_research/"/>
+    </url>
+    <url>
+        <loc>https://hideak1.github.io/vllm_study/zh/part1_foundations/</loc>
+        <lastmod>2026-03-20</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://hideak1.github.io/vllm_study/zh/part1_foundations/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://hideak1.github.io/vllm_study/part1_foundations/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://hideak1.github.io/vllm_study/ja/part1_foundations/"/>
+    </url>
+    <url>
+        <loc>https://hideak1.github.io/vllm_study/zh/part2_system_design/</loc>
+        <lastmod>2026-03-20</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://hideak1.github.io/vllm_study/zh/part2_system_design/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://hideak1.github.io/vllm_study/part2_system_design/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://hideak1.github.io/vllm_study/ja/part2_system_design/"/>
+    </url>
+    <url>
+        <loc>https://hideak1.github.io/vllm_study/zh/part3_vllm_architecture/</loc>
+        <lastmod>2026-03-20</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://hideak1.github.io/vllm_study/zh/part3_vllm_architecture/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://hideak1.github.io/vllm_study/part3_vllm_architecture/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://hideak1.github.io/vllm_study/ja/part3_vllm_architecture/"/>
+    </url>
+    <url>
+        <loc>https://hideak1.github.io/vllm_study/zh/part4_vllm_internals/</loc>
+        <lastmod>2026-03-20</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://hideak1.github.io/vllm_study/zh/part4_vllm_internals/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://hideak1.github.io/vllm_study/part4_vllm_internals/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://hideak1.github.io/vllm_study/ja/part4_vllm_internals/"/>
+    </url>
+    <url>
+        <loc>https://hideak1.github.io/vllm_study/zh/part5_sglang_architecture/</loc>
+        <lastmod>2026-03-20</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://hideak1.github.io/vllm_study/zh/part5_sglang_architecture/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://hideak1.github.io/vllm_study/part5_sglang_architecture/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://hideak1.github.io/vllm_study/ja/part5_sglang_architecture/"/>
+    </url>
+    <url>
+        <loc>https://hideak1.github.io/vllm_study/zh/part6_sglang_internals/</loc>
+        <lastmod>2026-03-20</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://hideak1.github.io/vllm_study/zh/part6_sglang_internals/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://hideak1.github.io/vllm_study/part6_sglang_internals/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://hideak1.github.io/vllm_study/ja/part6_sglang_internals/"/>
+    </url>
+    <url>
+        <loc>https://hideak1.github.io/vllm_study/zh/part7_cuda_kernels/</loc>
+        <lastmod>2026-03-20</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://hideak1.github.io/vllm_study/zh/part7_cuda_kernels/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://hideak1.github.io/vllm_study/part7_cuda_kernels/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://hideak1.github.io/vllm_study/ja/part7_cuda_kernels/"/>
+    </url>
+    <url>
+        <loc>https://hideak1.github.io/vllm_study/zh/part8_new_models/</loc>
+        <lastmod>2026-03-20</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://hideak1.github.io/vllm_study/zh/part8_new_models/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://hideak1.github.io/vllm_study/part8_new_models/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://hideak1.github.io/vllm_study/ja/part8_new_models/"/>
+    </url>
+    <url>
+        <loc>https://hideak1.github.io/vllm_study/zh/part9_production/</loc>
+        <lastmod>2026-03-20</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://hideak1.github.io/vllm_study/zh/part9_production/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://hideak1.github.io/vllm_study/part9_production/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://hideak1.github.io/vllm_study/ja/part9_production/"/>
+    </url>
+    <url>
+        <loc>https://hideak1.github.io/vllm_study/ja/</loc>
+        <lastmod>2026-03-20</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://hideak1.github.io/vllm_study/ja/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://hideak1.github.io/vllm_study/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://hideak1.github.io/vllm_study/zh/"/>
+    </url>
+    <url>
+        <loc>https://hideak1.github.io/vllm_study/ja/part10_comparison/</loc>
+        <lastmod>2026-03-20</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://hideak1.github.io/vllm_study/ja/part10_comparison/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://hideak1.github.io/vllm_study/part10_comparison/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://hideak1.github.io/vllm_study/zh/part10_comparison/"/>
+    </url>
+    <url>
+        <loc>https://hideak1.github.io/vllm_study/ja/part11_contributing/</loc>
+        <lastmod>2026-03-20</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://hideak1.github.io/vllm_study/ja/part11_contributing/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://hideak1.github.io/vllm_study/part11_contributing/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://hideak1.github.io/vllm_study/zh/part11_contributing/"/>
+    </url>
+    <url>
+        <loc>https://hideak1.github.io/vllm_study/ja/part12_research/</loc>
+        <lastmod>2026-03-20</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://hideak1.github.io/vllm_study/ja/part12_research/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://hideak1.github.io/vllm_study/part12_research/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://hideak1.github.io/vllm_study/zh/part12_research/"/>
+    </url>
+    <url>
+        <loc>https://hideak1.github.io/vllm_study/ja/part1_foundations/</loc>
+        <lastmod>2026-03-20</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://hideak1.github.io/vllm_study/ja/part1_foundations/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://hideak1.github.io/vllm_study/part1_foundations/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://hideak1.github.io/vllm_study/zh/part1_foundations/"/>
+    </url>
+    <url>
+        <loc>https://hideak1.github.io/vllm_study/ja/part2_system_design/</loc>
+        <lastmod>2026-03-20</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://hideak1.github.io/vllm_study/ja/part2_system_design/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://hideak1.github.io/vllm_study/part2_system_design/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://hideak1.github.io/vllm_study/zh/part2_system_design/"/>
+    </url>
+    <url>
+        <loc>https://hideak1.github.io/vllm_study/ja/part3_vllm_architecture/</loc>
+        <lastmod>2026-03-20</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://hideak1.github.io/vllm_study/ja/part3_vllm_architecture/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://hideak1.github.io/vllm_study/part3_vllm_architecture/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://hideak1.github.io/vllm_study/zh/part3_vllm_architecture/"/>
+    </url>
+    <url>
+        <loc>https://hideak1.github.io/vllm_study/ja/part4_vllm_internals/</loc>
+        <lastmod>2026-03-20</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://hideak1.github.io/vllm_study/ja/part4_vllm_internals/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://hideak1.github.io/vllm_study/part4_vllm_internals/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://hideak1.github.io/vllm_study/zh/part4_vllm_internals/"/>
+    </url>
+    <url>
+        <loc>https://hideak1.github.io/vllm_study/ja/part5_sglang_architecture/</loc>
+        <lastmod>2026-03-20</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://hideak1.github.io/vllm_study/ja/part5_sglang_architecture/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://hideak1.github.io/vllm_study/part5_sglang_architecture/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://hideak1.github.io/vllm_study/zh/part5_sglang_architecture/"/>
+    </url>
+    <url>
+        <loc>https://hideak1.github.io/vllm_study/ja/part6_sglang_internals/</loc>
+        <lastmod>2026-03-20</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://hideak1.github.io/vllm_study/ja/part6_sglang_internals/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://hideak1.github.io/vllm_study/part6_sglang_internals/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://hideak1.github.io/vllm_study/zh/part6_sglang_internals/"/>
+    </url>
+    <url>
+        <loc>https://hideak1.github.io/vllm_study/ja/part7_cuda_kernels/</loc>
+        <lastmod>2026-03-20</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://hideak1.github.io/vllm_study/ja/part7_cuda_kernels/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://hideak1.github.io/vllm_study/part7_cuda_kernels/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://hideak1.github.io/vllm_study/zh/part7_cuda_kernels/"/>
+    </url>
+    <url>
+        <loc>https://hideak1.github.io/vllm_study/ja/part8_new_models/</loc>
+        <lastmod>2026-03-20</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://hideak1.github.io/vllm_study/ja/part8_new_models/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://hideak1.github.io/vllm_study/part8_new_models/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://hideak1.github.io/vllm_study/zh/part8_new_models/"/>
+    </url>
+    <url>
+        <loc>https://hideak1.github.io/vllm_study/ja/part9_production/</loc>
+        <lastmod>2026-03-20</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://hideak1.github.io/vllm_study/ja/part9_production/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://hideak1.github.io/vllm_study/part9_production/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://hideak1.github.io/vllm_study/zh/part9_production/"/>
+    </url>
 </urlset>

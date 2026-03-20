@@ -12,6 +12,8 @@
         <meta name="author" content="vLLM Study Project">
       
       
+        <link rel="canonical" href="https://hideak1.github.io/vllm_study/part3_vllm_architecture/">
+      
       
         <link rel="prev" href="../notebooks/part2/chapter_2.7_disaggregated/">
       
@@ -19,6 +21,12 @@
         <link rel="next" href="../notebooks/part3/chapter_3.1_codebase_tour/">
       
       
+        
+          <link rel="alternate" href="./" hreflang="en">
+        
+          <link rel="alternate" href="../zh/part3_vllm_architecture/" hreflang="zh">
+        
+          <link rel="alternate" href="../ja/part3_vllm_architecture/" hreflang="ja">
         
       
       
@@ -147,6 +155,38 @@
       <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
     
     
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="Select language">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="./" hreflang="en" class="md-select__link">
+              English
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="../zh/part3_vllm_architecture/" hreflang="zh" class="md-select__link">
+              中文
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="../ja/part3_vllm_architecture/" hreflang="ja" class="md-select__link">
+              日本語
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
     
       
       
@@ -190,6 +230,18 @@
 </div>
       
     
+    
+      <div class="md-header__source">
+        <a href="https://github.com/hideak1/vllm_study" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    hideak1/vllm_study
+  </div>
+</a>
+      </div>
     
   </nav>
   
@@ -521,6 +573,18 @@
     vLLM & SGLang Expert Tutorials
   </label>
   
+    <div class="md-nav__source">
+      <a href="https://github.com/hideak1/vllm_study" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    hideak1/vllm_study
+  </div>
+</a>
+    </div>
+  
   <ul class="md-nav__list" data-md-scrollfix>
     
       
@@ -647,7 +711,7 @@
   <span class="md-ellipsis">
     
   
-    Chapter 1.1: Transformer Architecture &amp; KV-Cache Recap
+    1.1 Transformer & KV-Cache Recap
   
 
     
@@ -675,7 +739,7 @@
   <span class="md-ellipsis">
     
   
-    Chapter 1.2: GPU Memory Hierarchy
+    1.2 GPU Memory Hierarchy
   
 
     
@@ -703,7 +767,7 @@
   <span class="md-ellipsis">
     
   
-    Chapter 1.3: Arithmetic Intensity &amp; Roofline Model
+    1.3 Arithmetic Intensity & Roofline
   
 
     
@@ -731,7 +795,7 @@
   <span class="md-ellipsis">
     
   
-    Chapter 1.4: Tokenization, Detokenization &amp; Streaming
+    1.4 Tokenization & Streaming
   
 
     
@@ -759,7 +823,7 @@
   <span class="md-ellipsis">
     
   
-    Chapter 1.5: Latency vs Throughput -- Serving Metrics
+    1.5 Latency vs Throughput Metrics
   
 
     
@@ -787,7 +851,7 @@
   <span class="md-ellipsis">
     
   
-    Chapter 1.6: Batching Strategies
+    1.6 Batching Strategies
   
 
     
@@ -815,7 +879,7 @@
   <span class="md-ellipsis">
     
   
-    Chapter 1.7: Quantization Primer
+    1.7 Quantization Primer
   
 
     
@@ -843,7 +907,7 @@
   <span class="md-ellipsis">
     
   
-    Chapter 1.8: Sampling Strategies
+    1.8 Sampling Strategies
   
 
     
@@ -959,7 +1023,7 @@
   <span class="md-ellipsis">
     
   
-    Chapter 2.1: Anatomy of an LLM Serving System -- Request Lifecycle
+    2.1 Request Lifecycle
   
 
     
@@ -987,7 +1051,7 @@
   <span class="md-ellipsis">
     
   
-    Chapter 2.2: Scheduler Design
+    2.2 Scheduler Design
   
 
     
@@ -1015,7 +1079,7 @@
   <span class="md-ellipsis">
     
   
-    Chapter 2.3: Memory Management for KV-Cache
+    2.3 KV-Cache Memory Management
   
 
     
@@ -1043,7 +1107,7 @@
   <span class="md-ellipsis">
     
   
-    Chapter 2.4: Model Parallelism Strategies for Serving
+    2.4 Model Parallelism for Serving
   
 
     
@@ -1071,7 +1135,7 @@
   <span class="md-ellipsis">
     
   
-    Chapter 2.5: API Layer Design
+    2.5 API Layer Design
   
 
     
@@ -1099,7 +1163,7 @@
   <span class="md-ellipsis">
     
   
-    Chapter 2.6: Multi-Model Serving &amp; Model Routing
+    2.6 Multi-Model Serving
   
 
     
@@ -1127,7 +1191,7 @@
   <span class="md-ellipsis">
     
   
-    Chapter 2.7: Disaggregated Serving -- Prefill/Decode Separation
+    2.7 Disaggregated Serving
   
 
     
@@ -1254,7 +1318,7 @@
   <span class="md-ellipsis">
     
   
-    Chapter 3.1: vLLM Codebase Tour
+    3.1 Codebase Tour
   
 
     
@@ -1282,7 +1346,7 @@
   <span class="md-ellipsis">
     
   
-    Chapter 3.2: LLMEngine &amp; AsyncLLMEngine
+    3.2 LLMEngine & AsyncLLMEngine
   
 
     
@@ -1310,7 +1374,7 @@
   <span class="md-ellipsis">
     
   
-    Chapter 3.3: Scheduler Deep Dive
+    3.3 Scheduler Deep Dive
   
 
     
@@ -1338,7 +1402,7 @@
   <span class="md-ellipsis">
     
   
-    Chapter 3.4: PagedAttention — The Core Innovation
+    3.4 PagedAttention
   
 
     
@@ -1366,7 +1430,7 @@
   <span class="md-ellipsis">
     
   
-    Chapter 3.5: Block Manager
+    3.5 Block Manager
   
 
     
@@ -1394,7 +1458,7 @@
   <span class="md-ellipsis">
     
   
-    Chapter 3.6: Worker &amp; ModelRunner — GPU Execution Pipeline
+    3.6 Worker & ModelRunner
   
 
     
@@ -1422,7 +1486,7 @@
   <span class="md-ellipsis">
     
   
-    Chapter 3.7: Model Loader &amp; Weight Loading
+    3.7 Model Loader
   
 
     
@@ -1450,7 +1514,7 @@
   <span class="md-ellipsis">
     
   
-    Chapter 3.8: Attention Backends
+    3.8 Attention Backends
   
 
     
@@ -1478,7 +1542,7 @@
   <span class="md-ellipsis">
     
   
-    Chapter 3.9: Sampling &amp; Logits Processing Pipeline in vLLM
+    3.9 Sampling Pipeline
   
 
     
@@ -1506,7 +1570,7 @@
   <span class="md-ellipsis">
     
   
-    Chapter 3.10: vLLM API Server — FastAPI &amp; OpenAI Compatibility
+    3.10 API Server
   
 
     
@@ -1624,7 +1688,7 @@
   <span class="md-ellipsis">
     
   
-    Chapter 4.1: KV-Cache Memory Layout — Contiguous vs Paged
+    4.1 KV-Cache Memory Layout
   
 
     
@@ -1652,7 +1716,7 @@
   <span class="md-ellipsis">
     
   
-    Chapter 4.2: Prefix Caching — Automatic Prefix Caching (APC)
+    4.2 Prefix Caching (APC)
   
 
     
@@ -1680,7 +1744,7 @@
   <span class="md-ellipsis">
     
   
-    Chapter 4.3: CUDA Graph Capture &amp; Replay in vLLM
+    4.3 CUDA Graph Capture
   
 
     
@@ -1708,7 +1772,7 @@
   <span class="md-ellipsis">
     
   
-    Chapter 4.4: Custom CUDA Kernels in vLLM
+    4.4 Custom CUDA Kernels
   
 
     
@@ -1736,7 +1800,7 @@
   <span class="md-ellipsis">
     
   
-    Chapter 4.5: Distributed Execution — Ray, Multiprocessing, TP/PP
+    4.5 Distributed Execution
   
 
     
@@ -1764,7 +1828,7 @@
   <span class="md-ellipsis">
     
   
-    Chapter 4.6: Speculative Decoding in vLLM
+    4.6 Speculative Decoding
   
 
     
@@ -1792,7 +1856,7 @@
   <span class="md-ellipsis">
     
   
-    Chapter 4.7: Chunked Prefill &amp; Mixed Prefill-Decode Batching
+    4.7 Chunked Prefill
   
 
     
@@ -1820,7 +1884,7 @@
   <span class="md-ellipsis">
     
   
-    Chapter 4.8: LoRA Serving — Multi-LoRA Architecture in vLLM
+    4.8 LoRA Serving
   
 
     
@@ -1942,7 +2006,7 @@
   <span class="md-ellipsis">
     
   
-    Chapter 5.1: SGLang Codebase Tour
+    5.1 Codebase Tour
   
 
     
@@ -1970,7 +2034,7 @@
   <span class="md-ellipsis">
     
   
-    Chapter 5.2: SGLang Runtime — Server Architecture &amp; Router
+    5.2 Runtime & Router
   
 
     
@@ -1998,7 +2062,7 @@
   <span class="md-ellipsis">
     
   
-    Chapter 5.3: RadixAttention — Radix Tree for KV-Cache
+    5.3 RadixAttention
   
 
     
@@ -2026,7 +2090,7 @@
   <span class="md-ellipsis">
     
   
-    Chapter 5.4: SGLang Scheduler
+    5.4 Scheduler
   
 
     
@@ -2054,7 +2118,7 @@
   <span class="md-ellipsis">
     
   
-    Chapter 5.5: TokenizerManager &amp; DetokenizerManager
+    5.5 Tokenizer & Detokenizer
   
 
     
@@ -2082,7 +2146,7 @@
   <span class="md-ellipsis">
     
   
-    Chapter 5.6: ModelRunner &amp; TpModelWorker
+    5.6 ModelRunner & TpWorker
   
 
     
@@ -2110,7 +2174,7 @@
   <span class="md-ellipsis">
     
   
-    Chapter 5.7: FlashInfer Integration
+    5.7 FlashInfer Integration
   
 
     
@@ -2138,7 +2202,7 @@
   <span class="md-ellipsis">
     
   
-    Chapter 5.8: Constrained Decoding — JSON, Regex, Grammar
+    5.8 Constrained Decoding
   
 
     
@@ -2166,7 +2230,7 @@
   <span class="md-ellipsis">
     
   
-    Chapter 5.9: SGLang Frontend DSL — Programming Language for LLMs
+    5.9 Frontend DSL
   
 
     
@@ -2194,7 +2258,7 @@
   <span class="md-ellipsis">
     
   
-    Chapter 5.10: SGLang Multi-Modal Support — Vision-Language Models
+    5.10 Multi-Modal Support
   
 
     
@@ -2312,7 +2376,7 @@
   <span class="md-ellipsis">
     
   
-    Chapter 6.1: RadixAttention Advanced --- Cache-Aware Scheduling &amp; Eviction Policies
+    6.1 RadixAttention Advanced
   
 
     
@@ -2340,7 +2404,7 @@
   <span class="md-ellipsis">
     
   
-    Chapter 6.2: Data Parallelism &amp; Expert Parallelism in SGLang
+    6.2 Data & Expert Parallelism
   
 
     
@@ -2368,7 +2432,7 @@
   <span class="md-ellipsis">
     
   
-    Chapter 6.3: Torch.compile Integration in SGLang
+    6.3 Torch.compile Integration
   
 
     
@@ -2396,7 +2460,7 @@
   <span class="md-ellipsis">
     
   
-    Chapter 6.4: Overlap Scheduling -- CPU-GPU Overlap
+    6.4 Overlap Scheduling
   
 
     
@@ -2424,7 +2488,7 @@
   <span class="md-ellipsis">
     
   
-    Chapter 6.5: FP8 &amp; Quantization Support in SGLang
+    6.5 FP8 & Quantization
   
 
     
@@ -2452,7 +2516,7 @@
   <span class="md-ellipsis">
     
   
-    Chapter 6.6: Speculative Decoding in SGLang -- Eagle &amp; EAGLE-2
+    6.6 Speculative Decoding
   
 
     
@@ -2480,7 +2544,7 @@
   <span class="md-ellipsis">
     
   
-    Chapter 6.7: Embedding &amp; Reward Model Serving
+    6.7 Embedding & Reward Models
   
 
     
@@ -2508,7 +2572,7 @@
   <span class="md-ellipsis">
     
   
-    Chapter 6.8: Custom CUDA Kernels in SGLang
+    6.8 Custom CUDA Kernels
   
 
     
@@ -2626,7 +2690,7 @@
   <span class="md-ellipsis">
     
   
-    Chapter 7.1: CUDA Programming Primer for LLM Serving
+    7.1 CUDA Programming Primer
   
 
     
@@ -2654,7 +2718,7 @@
   <span class="md-ellipsis">
     
   
-    Chapter 7.2: Triton Programming — GPU Kernels in Python
+    7.2 Triton Programming
   
 
     
@@ -2682,7 +2746,7 @@
   <span class="md-ellipsis">
     
   
-    Chapter 7.3: Implementing PagedAttention Kernel from Scratch
+    7.3 PagedAttention Kernel
   
 
     
@@ -2710,7 +2774,7 @@
   <span class="md-ellipsis">
     
   
-    Chapter 7.4: FlashAttention — Algorithm &amp; Tiling Strategy
+    7.4 FlashAttention Algorithm
   
 
     
@@ -2738,7 +2802,7 @@
   <span class="md-ellipsis">
     
   
-    Chapter 7.5: Fused Kernels — RMSNorm, SiLU-Mul, Rotary Embedding
+    7.5 Fused Kernels
   
 
     
@@ -2766,7 +2830,7 @@
   <span class="md-ellipsis">
     
   
-    Chapter 7.6: Quantized Matmul Kernels — INT8, INT4, FP8
+    7.6 Quantized Matmul
   
 
     
@@ -2794,7 +2858,7 @@
   <span class="md-ellipsis">
     
   
-    Chapter 7.7: CUTLASS &amp; CuTe for GEMM Optimization
+    7.7 CUTLASS & CuTe
   
 
     
@@ -2822,7 +2886,7 @@
   <span class="md-ellipsis">
     
   
-    Chapter 7.8: Kernel Profiling — Nsight Compute, Nsight Systems
+    7.8 Kernel Profiling
   
 
     
@@ -2940,7 +3004,7 @@
   <span class="md-ellipsis">
     
   
-    Chapter 8.1: Model Registration System in vLLM
+    8.1 vLLM Model Registration
   
 
     
@@ -2968,7 +3032,7 @@
   <span class="md-ellipsis">
     
   
-    Chapter 8.2: Implementing a New Model in vLLM -- Step by Step
+    8.2 Implementing a Model in vLLM
   
 
     
@@ -2996,7 +3060,7 @@
   <span class="md-ellipsis">
     
   
-    Chapter 8.3: Adding Quantization Support for Your Model
+    8.3 Adding Quantization
   
 
     
@@ -3024,7 +3088,7 @@
   <span class="md-ellipsis">
     
   
-    Chapter 8.4: Multi-Modal Model Integration
+    8.4 Multi-Modal Integration
   
 
     
@@ -3052,7 +3116,7 @@
   <span class="md-ellipsis">
     
   
-    Chapter 8.5: Model Registration in SGLang
+    8.5 SGLang Model Registration
   
 
     
@@ -3080,7 +3144,7 @@
   <span class="md-ellipsis">
     
   
-    Chapter 8.6: Implementing a New Model in SGLang -- Step by Step
+    8.6 Implementing a Model in SGLang
   
 
     
@@ -3108,7 +3172,7 @@
   <span class="md-ellipsis">
     
   
-    Chapter 8.7: Testing &amp; Validating Model Correctness
+    8.7 Testing & Validation
   
 
     
@@ -3136,7 +3200,7 @@
   <span class="md-ellipsis">
     
   
-    Chapter 8.8: Performance Tuning Your Model Implementation
+    8.8 Performance Tuning
   
 
     
@@ -3254,7 +3318,7 @@
   <span class="md-ellipsis">
     
   
-    Chapter 9.1: Deployment Options — Docker, Kubernetes, Bare Metal
+    9.1 Deployment Options
   
 
     
@@ -3282,7 +3346,7 @@
   <span class="md-ellipsis">
     
   
-    Chapter 9.2: Load Balancing &amp; Auto-Scaling LLM Services
+    9.2 Load Balancing
   
 
     
@@ -3310,7 +3374,7 @@
   <span class="md-ellipsis">
     
   
-    Chapter 9.3: Monitoring &amp; Observability
+    9.3 Monitoring & Observability
   
 
     
@@ -3338,7 +3402,7 @@
   <span class="md-ellipsis">
     
   
-    Chapter 9.4: Benchmarking Methodology
+    9.4 Benchmarking Methodology
   
 
     
@@ -3366,7 +3430,7 @@
   <span class="md-ellipsis">
     
   
-    Chapter 9.5: Cost Optimization
+    9.5 Cost Optimization
   
 
     
@@ -3394,7 +3458,7 @@
   <span class="md-ellipsis">
     
   
-    Chapter 9.6: Multi-Node Serving
+    9.6 Multi-Node Serving
   
 
     
@@ -3422,7 +3486,7 @@
   <span class="md-ellipsis">
     
   
-    Chapter 9.7: Serving MoE Models — DeepSeek, Mixtral
+    9.7 MoE Model Serving
   
 
     
@@ -3450,7 +3514,7 @@
   <span class="md-ellipsis">
     
   
-    Chapter 9.8: Online Serving vs Offline Batch Inference
+    9.8 Online vs Offline Inference
   
 
     
@@ -3564,7 +3628,7 @@
   <span class="md-ellipsis">
     
   
-    Chapter 10.1: Architecture Comparison - vLLM vs SGLang Design Philosophy
+    10.1 Architecture Comparison
   
 
     
@@ -3592,7 +3656,7 @@
   <span class="md-ellipsis">
     
   
-    Chapter 10.2: Scheduling Strategy Comparison
+    10.2 Scheduling Comparison
   
 
     
@@ -3620,7 +3684,7 @@
   <span class="md-ellipsis">
     
   
-    Chapter 10.3: Memory Management Comparison - PagedAttention vs RadixAttention
+    10.3 Memory Management Comparison
   
 
     
@@ -3648,7 +3712,7 @@
   <span class="md-ellipsis">
     
   
-    Chapter 10.4: Performance Benchmarks - Latency, Throughput, TTFT
+    10.4 Performance Benchmarks
   
 
     
@@ -3676,7 +3740,7 @@
   <span class="md-ellipsis">
     
   
-    Chapter 10.5: Feature Matrix - What Each System Does Best
+    10.5 Feature Matrix
   
 
     
@@ -3704,7 +3768,7 @@
   <span class="md-ellipsis">
     
   
-    Chapter 10.6: When to Use What - Decision Framework
+    10.6 Decision Framework
   
 
     
@@ -3820,7 +3884,7 @@
   <span class="md-ellipsis">
     
   
-    Chapter 11.1: Development Environment Setup - Build from Source
+    11.1 Dev Environment Setup
   
 
     
@@ -3848,7 +3912,7 @@
   <span class="md-ellipsis">
     
   
-    Chapter 11.2: Testing Framework
+    11.2 Testing Framework
   
 
     
@@ -3876,7 +3940,7 @@
   <span class="md-ellipsis">
     
   
-    Chapter 11.3: Debugging Techniques
+    11.3 Debugging Techniques
   
 
     
@@ -3904,7 +3968,7 @@
   <span class="md-ellipsis">
     
   
-    Chapter 11.4: Performance Profiling Workflow
+    11.4 Performance Profiling
   
 
     
@@ -3932,7 +3996,7 @@
   <span class="md-ellipsis">
     
   
-    Chapter 11.5: Code Review Standards &amp; PR Process
+    11.5 Code Review & PR Process
   
 
     
@@ -3960,7 +4024,7 @@
   <span class="md-ellipsis">
     
   
-    Chapter 11.6: CI/CD Pipeline
+    11.6 CI/CD Pipeline
   
 
     
@@ -3988,7 +4052,7 @@
   <span class="md-ellipsis">
     
   
-    Chapter 11.7: Writing Documentation &amp; Examples
+    11.7 Writing Documentation
   
 
     
@@ -4106,7 +4170,7 @@
   <span class="md-ellipsis">
     
   
-    Chapter 12.1: Disaggregated Serving -- Mooncake, DistServe, Splitwise
+    12.1 Disaggregated Serving
   
 
     
@@ -4134,7 +4198,7 @@
   <span class="md-ellipsis">
     
   
-    Chapter 12.2: KV-Cache Compression
+    12.2 KV-Cache Compression
   
 
     
@@ -4162,7 +4226,7 @@
   <span class="md-ellipsis">
     
   
-    Chapter 12.3: Serving Long-Context Models -- 128K, 1M+ Context
+    12.3 Long-Context Serving
   
 
     
@@ -4190,7 +4254,7 @@
   <span class="md-ellipsis">
     
   
-    Chapter 12.4: Serving Reasoning Models -- Chain-of-Thought, R1-style
+    12.4 Reasoning Model Serving
   
 
     
@@ -4218,7 +4282,7 @@
   <span class="md-ellipsis">
     
   
-    Chapter 12.5: Hardware-Aware Optimization -- AMD, Intel, Custom ASICs
+    12.5 Hardware-Aware Optimization
   
 
     
@@ -4246,7 +4310,7 @@
   <span class="md-ellipsis">
     
   
-    Chapter 12.6: Agent Serving -- Multi-Turn, Tool Use, Agentic Workflows
+    12.6 Agent Serving
   
 
     
@@ -4274,7 +4338,7 @@
   <span class="md-ellipsis">
     
   
-    Chapter 12.7: Mixture-of-Experts Serving Optimization
+    12.7 MoE Optimization
   
 
     
@@ -4302,7 +4366,7 @@
   <span class="md-ellipsis">
     
   
-    Chapter 12.8: Continuous Learning &amp; Model Updates in Production
+    12.8 Continuous Learning
   
 
     
@@ -4446,6 +4510,9 @@
                   
 
 
+  
+  
+
 
 <h1 id="part-3-vllm-architecture-deep-dive">Part 3: vLLM Architecture Deep Dive<a class="headerlink" href="#part-3-vllm-architecture-deep-dive" title="Permanent link">&para;</a></h1>
 <p><strong>Goal:</strong> Trace every major component of vLLM from the API entry-point to GPU execution, understanding how the pieces fit together.</p>
@@ -4565,7 +4632,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../notebooks/part2/chapter_2.7_disaggregated/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Chapter 2.7: Disaggregated Serving -- Prefill/Decode Separation">
+          <a href="../notebooks/part2/chapter_2.7_disaggregated/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 2.7 Disaggregated Serving">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -4575,20 +4642,20 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                Chapter 2.7: Disaggregated Serving -- Prefill/Decode Separation
+                2.7 Disaggregated Serving
               </div>
             </div>
           </a>
         
         
           
-          <a href="../notebooks/part3/chapter_3.1_codebase_tour/" class="md-footer__link md-footer__link--next" aria-label="Next: Chapter 3.1: vLLM Codebase Tour">
+          <a href="../notebooks/part3/chapter_3.1_codebase_tour/" class="md-footer__link md-footer__link--next" aria-label="Next: 3.1 Codebase Tour">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Chapter 3.1: vLLM Codebase Tour
+                3.1 Codebase Tour
               </div>
             </div>
             <div class="md-footer__button md-icon">
