@@ -6,28 +6,36 @@ theme:
   name: material
   features:
     - navigation.tabs
+    - navigation.tabs.sticky
     - navigation.sections
-    - navigation.expand
+    - navigation.path
     - navigation.top
-    - toc.integrate
+    - navigation.footer
+    - navigation.indexes
     - search.suggest
+    - search.highlight
     - content.code.copy
     - content.code.annotate
+    - content.tabs.link
   palette:
-    - scheme: default
-      primary: indigo
-      accent: teal
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: white
+      accent: green
       toggle:
         icon: material/brightness-7
         name: Switch to dark mode
-    - scheme: slate
-      primary: indigo
-      accent: teal
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: black
+      accent: green
       toggle:
         icon: material/brightness-4
         name: Switch to light mode
+  font: false
   icon:
     repo: fontawesome/brands/github
+    logo: material/server-network
 
 plugins:
   - search
@@ -51,21 +59,37 @@ markdown_extensions:
   - pymdownx.arithmatex:
       generic: true
   - pymdownx.details
-  - pymdownx.emoji
+  - pymdownx.mark
+  - pymdownx.keys
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
   - admonition
+  - def_list
+  - footnotes
+  - tables
   - attr_list
   - md_in_html
   - toc:
       permalink: true
 
+extra_css:
+  - stylesheets/extra.css
+
 extra_javascript:
   - javascripts/mathjax.js
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js
 
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/hideak1/vllm_study
+  generator: false
+
 nav:
   - Home: index.md
   - "Part 1: Foundations":
-    - Overview: part1_foundations/index.md
+    - part1_foundations/index.md
     - "1.1 Transformer & KV-Cache Recap": notebooks/part1/chapter_1.1_transformer_kvcache.ipynb
     - "1.2 GPU Memory Hierarchy": notebooks/part1/chapter_1.2_gpu_memory.ipynb
     - "1.3 Arithmetic Intensity & Roofline": notebooks/part1/chapter_1.3_roofline_model.ipynb
@@ -75,7 +99,7 @@ nav:
     - "1.7 Quantization Primer": notebooks/part1/chapter_1.7_quantization.ipynb
     - "1.8 Sampling Strategies": notebooks/part1/chapter_1.8_sampling.ipynb
   - "Part 2: System Design":
-    - Overview: part2_system_design/index.md
+    - part2_system_design/index.md
     - "2.1 Request Lifecycle": notebooks/part2/chapter_2.1_request_lifecycle.ipynb
     - "2.2 Scheduler Design": notebooks/part2/chapter_2.2_scheduler_design.ipynb
     - "2.3 KV-Cache Memory Management": notebooks/part2/chapter_2.3_kvcache_memory.ipynb
@@ -84,7 +108,7 @@ nav:
     - "2.6 Multi-Model Serving": notebooks/part2/chapter_2.6_multi_model.ipynb
     - "2.7 Disaggregated Serving": notebooks/part2/chapter_2.7_disaggregated.ipynb
   - "Part 3: vLLM Architecture":
-    - Overview: part3_vllm_architecture/index.md
+    - part3_vllm_architecture/index.md
     - "3.1 Codebase Tour": notebooks/part3/chapter_3.1_codebase_tour.ipynb
     - "3.2 LLMEngine & AsyncLLMEngine": notebooks/part3/chapter_3.2_llm_engine.ipynb
     - "3.3 Scheduler Deep Dive": notebooks/part3/chapter_3.3_scheduler.ipynb
@@ -96,7 +120,7 @@ nav:
     - "3.9 Sampling Pipeline": notebooks/part3/chapter_3.9_sampling_pipeline.ipynb
     - "3.10 API Server": notebooks/part3/chapter_3.10_api_server.ipynb
   - "Part 4: vLLM Internals":
-    - Overview: part4_vllm_internals/index.md
+    - part4_vllm_internals/index.md
     - "4.1 KV-Cache Memory Layout": notebooks/part4/chapter_4.1_kvcache_layout.ipynb
     - "4.2 Prefix Caching (APC)": notebooks/part4/chapter_4.2_prefix_caching.ipynb
     - "4.3 CUDA Graph Capture": notebooks/part4/chapter_4.3_cuda_graphs.ipynb
@@ -106,7 +130,7 @@ nav:
     - "4.7 Chunked Prefill": notebooks/part4/chapter_4.7_chunked_prefill.ipynb
     - "4.8 LoRA Serving": notebooks/part4/chapter_4.8_lora.ipynb
   - "Part 5: SGLang Architecture":
-    - Overview: part5_sglang_architecture/index.md
+    - part5_sglang_architecture/index.md
     - "5.1 Codebase Tour": notebooks/part5/chapter_5.1_codebase_tour.ipynb
     - "5.2 Runtime & Router": notebooks/part5/chapter_5.2_runtime.ipynb
     - "5.3 RadixAttention": notebooks/part5/chapter_5.3_radix_attention.ipynb
@@ -118,7 +142,7 @@ nav:
     - "5.9 Frontend DSL": notebooks/part5/chapter_5.9_frontend_dsl.ipynb
     - "5.10 Multi-Modal Support": notebooks/part5/chapter_5.10_multimodal.ipynb
   - "Part 6: SGLang Internals":
-    - Overview: part6_sglang_internals/index.md
+    - part6_sglang_internals/index.md
     - "6.1 RadixAttention Advanced": notebooks/part6/chapter_6.1_radix_advanced.ipynb
     - "6.2 Data & Expert Parallelism": notebooks/part6/chapter_6.2_parallelism.ipynb
     - "6.3 Torch.compile Integration": notebooks/part6/chapter_6.3_torch_compile.ipynb
@@ -128,7 +152,7 @@ nav:
     - "6.7 Embedding & Reward Models": notebooks/part6/chapter_6.7_embedding_reward.ipynb
     - "6.8 Custom CUDA Kernels": notebooks/part6/chapter_6.8_cuda_kernels.ipynb
   - "Part 7: CUDA & Triton":
-    - Overview: part7_cuda_kernels/index.md
+    - part7_cuda_kernels/index.md
     - "7.1 CUDA Programming Primer": notebooks/part7/chapter_7.1_cuda_primer.ipynb
     - "7.2 Triton Programming": notebooks/part7/chapter_7.2_triton.ipynb
     - "7.3 PagedAttention Kernel": notebooks/part7/chapter_7.3_paged_attention_kernel.ipynb
@@ -138,7 +162,7 @@ nav:
     - "7.7 CUTLASS & CuTe": notebooks/part7/chapter_7.7_cutlass.ipynb
     - "7.8 Kernel Profiling": notebooks/part7/chapter_7.8_profiling.ipynb
   - "Part 8: New Models":
-    - Overview: part8_new_models/index.md
+    - part8_new_models/index.md
     - "8.1 vLLM Model Registration": notebooks/part8/chapter_8.1_vllm_registration.ipynb
     - "8.2 Implementing a Model in vLLM": notebooks/part8/chapter_8.2_vllm_new_model.ipynb
     - "8.3 Adding Quantization": notebooks/part8/chapter_8.3_quantization_support.ipynb
@@ -148,7 +172,7 @@ nav:
     - "8.7 Testing & Validation": notebooks/part8/chapter_8.7_testing.ipynb
     - "8.8 Performance Tuning": notebooks/part8/chapter_8.8_performance.ipynb
   - "Part 9: Production":
-    - Overview: part9_production/index.md
+    - part9_production/index.md
     - "9.1 Deployment Options": notebooks/part9/chapter_9.1_deployment.ipynb
     - "9.2 Load Balancing": notebooks/part9/chapter_9.2_load_balancing.ipynb
     - "9.3 Monitoring & Observability": notebooks/part9/chapter_9.3_monitoring.ipynb
@@ -158,7 +182,7 @@ nav:
     - "9.7 MoE Model Serving": notebooks/part9/chapter_9.7_moe_serving.ipynb
     - "9.8 Online vs Offline Inference": notebooks/part9/chapter_9.8_online_vs_offline.ipynb
   - "Part 10: Comparison":
-    - Overview: part10_comparison/index.md
+    - part10_comparison/index.md
     - "10.1 Architecture Comparison": notebooks/part10/chapter_10.1_architecture.ipynb
     - "10.2 Scheduling Comparison": notebooks/part10/chapter_10.2_scheduling.ipynb
     - "10.3 Memory Management Comparison": notebooks/part10/chapter_10.3_memory.ipynb
@@ -166,7 +190,7 @@ nav:
     - "10.5 Feature Matrix": notebooks/part10/chapter_10.5_features.ipynb
     - "10.6 Decision Framework": notebooks/part10/chapter_10.6_decision.ipynb
   - "Part 11: Contributing":
-    - Overview: part11_contributing/index.md
+    - part11_contributing/index.md
     - "11.1 Dev Environment Setup": notebooks/part11/chapter_11.1_dev_setup.ipynb
     - "11.2 Testing Framework": notebooks/part11/chapter_11.2_testing.ipynb
     - "11.3 Debugging Techniques": notebooks/part11/chapter_11.3_debugging.ipynb
@@ -175,7 +199,7 @@ nav:
     - "11.6 CI/CD Pipeline": notebooks/part11/chapter_11.6_cicd.ipynb
     - "11.7 Writing Documentation": notebooks/part11/chapter_11.7_documentation.ipynb
   - "Part 12: Research":
-    - Overview: part12_research/index.md
+    - part12_research/index.md
     - "12.1 Disaggregated Serving": notebooks/part12/chapter_12.1_disaggregated.ipynb
     - "12.2 KV-Cache Compression": notebooks/part12/chapter_12.2_kvcache_compression.ipynb
     - "12.3 Long-Context Serving": notebooks/part12/chapter_12.3_long_context.ipynb

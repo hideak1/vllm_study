@@ -1,122 +1,209 @@
-# vLLM & SGLang Expert Tutorials
-
-**A comprehensive learning resource for mastering LLM serving systems — from fundamentals to contributor-level expertise.**
-
+---
+hide:
+  - navigation
+  - toc
 ---
 
-## Welcome
+# vLLM & SGLang Expert Tutorials
 
-This tutorial series provides a systematic path to becoming an expert in **vLLM** and **SGLang**, the two most important open-source LLM serving frameworks. Inspired by the [UvA Deep Learning Tutorials](https://uvadlc-notebooks.readthedocs.io/en/latest/), each chapter combines detailed explanations with runnable code demos and hands-on exercises.
+<div class="hero" markdown>
 
-## Who Is This For?
+# Master LLM Serving Systems
 
-This resource is designed for engineers who:
+<p class="hero-subtitle">
+  From GPU fundamentals to contributor-level expertise in vLLM and SGLang. 105 hands-on notebooks covering PagedAttention, RadixAttention, CUDA kernels, and production deployment.
+</p>
 
-- Have used vLLM/SGLang to serve models but want to understand the internals
-- Want to contribute to vLLM/SGLang at the source code level
-- Need to write custom CUDA kernels for LLM serving
-- Want to add new model architectures to these frameworks
-- Are building production LLM serving infrastructure
+<div class="hero-actions">
+  <a href="part1_foundations/" class="btn-primary">Start Learning</a>
+  <a href="https://github.com/hideak1/vllm_study" class="btn-outline">GitHub</a>
+  <a href="https://colab.research.google.com/github/hideak1/vllm_study/blob/main/notebooks/part1/chapter_1.1_transformer_kvcache.ipynb" class="btn-outline">Open in Colab</a>
+</div>
 
-## Prerequisites
+</div>
 
-- Solid Python programming skills
-- Basic understanding of deep learning and Transformers
-- Familiarity with PyTorch
-- Access to a GPU (NVIDIA recommended, 16GB+ VRAM)
-- Basic Linux/Unix command line proficiency
+<div class="highlights-bar" markdown>
 
-## Curriculum Overview
+<div class="hl">
+  <span class="hl-value">105</span>
+  <span class="hl-label">Chapters</span>
+</div>
+<div class="hl">
+  <span class="hl-value">12</span>
+  <span class="hl-label">Parts</span>
+</div>
+<div class="hl">
+  <span class="hl-value">2</span>
+  <span class="hl-label">Frameworks</span>
+</div>
+<div class="hl">
+  <span class="hl-value">96</span>
+  <span class="hl-label">Notebooks</span>
+</div>
 
-| Part | Title | Chapters | Focus |
-|------|-------|----------|-------|
-| **1** | [Foundations of LLM Serving](part1_foundations/index.md) | 8 | Core concepts: GPU memory, batching, quantization, metrics |
-| **2** | [LLM Serving System Design](part2_system_design/index.md) | 7 | Architecture patterns: schedulers, memory management, APIs |
-| **3** | [vLLM Architecture Deep Dive](part3_vllm_architecture/index.md) | 10 | Full vLLM source code walkthrough |
-| **4** | [vLLM Internals](part4_vllm_internals/index.md) | 8 | Memory systems, CUDA graphs, distributed execution |
-| **5** | [SGLang Architecture Deep Dive](part5_sglang_architecture/index.md) | 10 | Full SGLang source code walkthrough |
-| **6** | [SGLang Internals](part6_sglang_internals/index.md) | 8 | RadixAttention, overlap scheduling, optimizations |
-| **7** | [Custom CUDA Kernels & Triton](part7_cuda_kernels/index.md) | 8 | Write your own GPU kernels for LLM serving |
-| **8** | [Adding New Model Architectures](part8_new_models/index.md) | 8 | End-to-end model integration guide |
-| **9** | [Production Deployment](part9_production/index.md) | 8 | Docker, K8s, monitoring, cost optimization |
-| **10** | [Comparative Analysis](part10_comparison/index.md) | 6 | vLLM vs SGLang systematic comparison |
-| **11** | [Contributing & Development](part11_contributing/index.md) | 7 | Dev setup, testing, debugging, PR workflow |
-| **12** | [Research & Future Directions](part12_research/index.md) | 8 | Cutting-edge: disaggregated serving, long-context, agents |
+</div>
 
-**Total: 12 Parts, 105 Chapters**
+<div class="arch-flow">
+  <span class="node node-request">Request</span>
+  <span class="connector">&rarr;</span>
+  <span class="node node-schedule">Schedule</span>
+  <span class="connector">&rarr;</span>
+  <span class="node node-prefill">Prefill</span>
+  <span class="connector">&rarr;</span>
+  <span class="node node-decode">Decode</span>
+  <span class="connector">&rarr;</span>
+  <span class="node node-stream">Stream</span>
+</div>
 
-## Recommended Learning Path
+<div class="techs">
+  <span>vLLM</span>
+  <span>SGLang</span>
+  <span>PagedAttention</span>
+  <span>FlashInfer</span>
+  <span>Triton</span>
+  <span>CUDA</span>
+</div>
 
+<div class="section-divider" markdown>
+
+## Curriculum
+
+A systematic path from fundamentals to source-level mastery.
+
+</div>
+
+<div class="parts-grid" markdown>
+
+<a class="card" href="part1_foundations/">
+  <span class="card-icon">:material-chip:</span>
+  <span class="card-title">Part 1: Foundations</span>
+  <span class="card-desc">Transformer internals, GPU memory hierarchy, roofline analysis, batching strategies, quantization, and serving metrics.</span>
+  <span class="card-meta">8 chapters</span>
+</a>
+
+<a class="card" href="part2_system_design/">
+  <span class="card-icon">:material-sitemap:</span>
+  <span class="card-title">Part 2: System Design</span>
+  <span class="card-desc">Request lifecycle, scheduler design, KV-cache memory management, model parallelism, and API layer architecture.</span>
+  <span class="card-meta">7 chapters</span>
+</a>
+
+<a class="card" href="part3_vllm_architecture/">
+  <span class="card-icon">:material-code-braces:</span>
+  <span class="card-title">Part 3: vLLM Architecture</span>
+  <span class="card-desc">Full source code walkthrough — LLMEngine, Scheduler, PagedAttention, Block Manager, Worker, and API Server.</span>
+  <span class="card-meta">10 chapters</span>
+</a>
+
+<a class="card" href="part4_vllm_internals/">
+  <span class="card-icon">:material-memory:</span>
+  <span class="card-title">Part 4: vLLM Internals</span>
+  <span class="card-desc">KV-cache memory layout, prefix caching, CUDA graph capture, custom kernels, speculative decoding, and LoRA serving.</span>
+  <span class="card-meta">8 chapters</span>
+</a>
+
+<a class="card" href="part5_sglang_architecture/">
+  <span class="card-icon">:material-lightning-bolt:</span>
+  <span class="card-title">Part 5: SGLang Architecture</span>
+  <span class="card-desc">Runtime & Router, RadixAttention, Scheduler, ModelRunner, FlashInfer integration, and Frontend DSL.</span>
+  <span class="card-meta">10 chapters</span>
+</a>
+
+<a class="card" href="part6_sglang_internals/">
+  <span class="card-icon">:material-cog:</span>
+  <span class="card-title">Part 6: SGLang Internals</span>
+  <span class="card-desc">Advanced RadixAttention, data & expert parallelism, torch.compile, overlap scheduling, and FP8 quantization.</span>
+  <span class="card-meta">8 chapters</span>
+</a>
+
+<a class="card" href="part7_cuda_kernels/">
+  <span class="card-icon">:material-gpu:</span>
+  <span class="card-title">Part 7: CUDA & Triton</span>
+  <span class="card-desc">Write GPU kernels from scratch — PagedAttention, FlashAttention, fused ops, quantized matmul, and CUTLASS.</span>
+  <span class="card-meta">8 chapters</span>
+</a>
+
+<a class="card" href="part8_new_models/">
+  <span class="card-icon">:material-puzzle:</span>
+  <span class="card-title">Part 8: New Models</span>
+  <span class="card-desc">End-to-end guide to adding new model architectures to vLLM and SGLang with testing and performance tuning.</span>
+  <span class="card-meta">8 chapters</span>
+</a>
+
+<a class="card" href="part9_production/">
+  <span class="card-icon">:material-rocket-launch:</span>
+  <span class="card-title">Part 9: Production</span>
+  <span class="card-desc">Deployment options, load balancing, monitoring, benchmarking methodology, cost optimization, and multi-node serving.</span>
+  <span class="card-meta">8 chapters</span>
+</a>
+
+<a class="card" href="part10_comparison/">
+  <span class="card-icon">:material-scale-balance:</span>
+  <span class="card-title">Part 10: Comparison</span>
+  <span class="card-desc">Systematic vLLM vs SGLang comparison — architecture, scheduling, memory management, and decision framework.</span>
+  <span class="card-meta">6 chapters</span>
+</a>
+
+<a class="card" href="part11_contributing/">
+  <span class="card-icon">:material-source-pull:</span>
+  <span class="card-title">Part 11: Contributing</span>
+  <span class="card-desc">Dev environment setup, testing framework, debugging, performance profiling, and code review workflow.</span>
+  <span class="card-meta">7 chapters</span>
+</a>
+
+<a class="card" href="part12_research/">
+  <span class="card-icon">:material-telescope:</span>
+  <span class="card-title">Part 12: Research</span>
+  <span class="card-desc">Cutting-edge topics — disaggregated serving, KV-cache compression, long-context, reasoning models, and MoE optimization.</span>
+  <span class="card-meta">8 chapters</span>
+</a>
+
+</div>
+
+<div class="section-divider" markdown>
+
+## Learning Path
+
+The recommended progression through the curriculum.
+
+</div>
+
+```mermaid
+graph LR
+    A[Foundations] --> B[System Design]
+    B --> C[vLLM Architecture]
+    C --> D[vLLM Internals]
+    D --> E[SGLang Architecture]
+    E --> F[SGLang Internals]
+    F --> G[CUDA & Triton]
+    G --> H[Production & Research]
+
+    style A fill:#dcfce7,stroke:#166534,color:#166534
+    style B fill:#dbeafe,stroke:#1e40af,color:#1e40af
+    style C fill:#e0e7ff,stroke:#3730a3,color:#3730a3
+    style D fill:#ede9fe,stroke:#5b21b6,color:#5b21b6
+    style E fill:#fce7f3,stroke:#9d174d,color:#9d174d
+    style F fill:#fae8ff,stroke:#86198f,color:#86198f
+    style G fill:#fef3c7,stroke:#92400e,color:#92400e
+    style H fill:#059669,stroke:#059669,color:#fff
 ```
-Part 1 (Foundations) → Part 2 (System Design)
-    ↓
-Part 3 (vLLM Architecture) → Part 4 (vLLM Internals)
-    ↓
-Part 5 (SGLang Architecture) → Part 6 (SGLang Internals)
-    ↓
-Part 7 (CUDA/Triton) → Part 8 (New Models)
-    ↓
-Part 9 (Production) → Part 10 (Comparison)
-    ↓
-Part 11 (Contributing) → Part 12 (Research)
-```
 
-## How to Use These Tutorials
+<div class="section-divider" markdown>
 
-### Quick Start (Recommended)
+## Quick Start
+
+</div>
+
 ```bash
-git clone <repo-url>
+git clone https://github.com/hideak1/vllm_study.git
 cd vllm_study
-make install   # Install dependencies
-make serve     # Start docs + Jupyter servers
-```
-This starts **both** servers with all dependencies managed by `uv`:
-
-- **http://localhost:8000** — Read tutorials (MkDocs site)
-- **http://localhost:8888** — Run exercises (Jupyter notebooks)
-
-No manual dependency installation needed — `uv` handles everything automatically.
-
-### Google Colab
-Each notebook includes an "Open in Colab" badge for cloud execution with free GPU access.
-
-### Other Commands
-```bash
-make install            # Install dependencies
-make serve              # Start docs + Jupyter servers
-make docs               # Start only MkDocs server
-make jupyter            # Start only Jupyter server
-make build              # Build static site (mkdocs build)
-make deploy             # Deploy to GitHub Pages
-make clean              # Remove build artifacts
-make sync-notebooks     # Copy notebooks into docs/
+make install   # Install dependencies via uv
+make serve     # Start docs (localhost:8000) + Jupyter (localhost:8888)
 ```
 
-### Manual Setup (without Make)
-```bash
-uv sync                          # Install dependencies
-uv sync --extra ml               # + PyTorch & Transformers (macOS/CPU)
-uv sync --extra gpu              # + vLLM, Triton (Linux + NVIDIA GPU)
-uv run mkdocs serve              # Start docs site
-uv run jupyter notebook           # Start Jupyter
-```
-
-## Conventions
-
-Throughout these tutorials, we use the following conventions:
-
-!!! info "Concept Explanation"
-    Blue boxes explain key concepts and theory.
-
-!!! warning "Common Pitfall"
-    Orange boxes highlight common mistakes and misconceptions.
-
-!!! tip "Pro Tip"
-    Green boxes share expert-level insights and best practices.
-
-!!! example "Hands-on Exercise"
-    Purple boxes contain exercises for you to try.
-
-## Citation
-
-If you find these tutorials useful, please star the repository and share with others in the LLM serving community.
+| Convention | Meaning |
+|-----------|---------|
+| :material-information: **Concept** | Key concepts and theory explanations |
+| :material-alert: **Common Pitfall** | Frequent mistakes and misconceptions |
+| :material-lightbulb: **Pro Tip** | Expert-level insights and best practices |
+| :material-pencil: **Exercise** | Hands-on coding exercises |
